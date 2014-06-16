@@ -1,0 +1,24 @@
+﻿@model Teste_MetaDataType.Models.User
+@{
+    ViewBag.Title = "CreateUser";
+}
+
+<h2>CreateUser</h2>
+
+<p>
+    @using (Html.BeginForm("CreateUser", "Home", FormMethod.Post, null))
+    {
+        @Html.ValidationSummary(true)
+        <p>
+            @Html.LabelFor(m => m.Nome)<br />
+            @Html.TextBoxFor(m => m.Nome)
+            @Html.ValidationMessageFor(m => m.Nome)
+        </p>
+         <p>
+            @Html.LabelFor(m => m.Senha)<br />
+            @Html.TextBoxFor(m => m.Senha)
+             @Html.ValidationMessageFor(m => m.Senha)
+        </p>
+        <input type="submit" value="Enviar" />
+    }
+</p>
